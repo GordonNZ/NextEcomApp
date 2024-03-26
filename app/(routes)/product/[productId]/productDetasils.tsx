@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/app/components/products/button';
+import ProductImage from '@/app/components/products/productImage';
 import SetColor from '@/app/components/products/setColor';
 import SetQuantity from '@/app/components/products/setQuantity';
 import { product } from '@/utils/product';
@@ -78,7 +79,11 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-      <div>Images</div>
+      <ProductImage
+        cartProduct={CartProduct}
+        product={product}
+        handleColorSelect={handleColorSelect}
+      />
       <div className='flex flex-col gap-1 text-slate-500 text-sm'>
         <h2 className='text-3xl font-medium text-slate-700'>{product.name}</h2>
         <div className='flex items-center gap-2'>
@@ -116,6 +121,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         <div className='max-w-[300px]'>
           <Button label='Add To Cart' onClick={() => {}} />
         </div>
+        P
       </div>
     </div>
   );
