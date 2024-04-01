@@ -2,6 +2,7 @@ import Container from '@/app/components/container';
 import { product } from '@/utils/product';
 import React from 'react';
 import ProductDetails from './productDetasils';
+import ListRating from './listRating';
 
 interface Iprams {
   productId?: string;
@@ -10,14 +11,14 @@ interface Iprams {
 const Product = ({ params }: { params: Iprams }) => {
   console.log(params);
 
-  const productRating =
-    product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
-    product.reviews.length;
-
   return (
     <div className='p-8'>
       <Container>
         <ProductDetails product={product} />
+        <div className='flex flex-col mt-20 gap-4'>
+          <div>Add Rating</div>
+          <ListRating product={product} />
+        </div>
       </Container>
     </div>
   );

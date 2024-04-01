@@ -117,11 +117,9 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           handleQtyIncrease={handleQtyIncrease}
         />
         <Horizontal />
-        <div>add to cart</div>
         <div className='max-w-[300px]'>
           <Button label='Add To Cart' onClick={() => {}} />
         </div>
-        P
       </div>
     </div>
   );
