@@ -4,6 +4,7 @@ import Button from '@/app/components/products/button';
 import ProductImage from '@/app/components/products/productImage';
 import SetColor from '@/app/components/products/setColor';
 import SetQuantity from '@/app/components/products/setQuantity';
+import { useCart } from '@/hooks/useCart';
 import { product } from '@/utils/product';
 import { Rating } from '@mui/material';
 import React, { useCallback, useState } from 'react';
@@ -34,6 +35,8 @@ const Horizontal = () => {
 };
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
+  const { handleAddProductToCart, cartProducts } = useCart();
+  const { cartTotalQty } = useCart();
   const [CartProduct, setCartProduct] = useState<CartProductType>({
     id: product.id,
     name: product.name,
@@ -44,7 +47,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
     quantity: 1,
     price: product.price,
   });
-
+  console.log(cartProducts);
   const productRating =
     product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
     product.reviews.length;
@@ -118,7 +121,12 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         />
         <Horizontal />
         <div className='max-w-[300px]'>
-          <Button label='Add To Cart' onClick={() => {}} />
+          <Button
+            label='Add To Cart'
+            onClick={() => {
+              handleAddProductToCart(CartProduct);
+            }}
+          />
         </div>
       </div>
     </div>
