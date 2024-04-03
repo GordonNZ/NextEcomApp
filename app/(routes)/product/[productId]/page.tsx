@@ -1,7 +1,7 @@
 import Container from '@/app/components/container';
 import { product } from '@/utils/product';
 import React from 'react';
-import ProductDetails from './productDetasils';
+import ProductDetails from './productDetails';
 import ListRating from './listRating';
 
 interface Iprams {

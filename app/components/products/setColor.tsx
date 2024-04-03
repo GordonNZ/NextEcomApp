@@ -2,7 +2,7 @@
 import {
   CartProductType,
   SelectedImgType,
-} from '@/app/(routes)/product/[productId]/productDetasils';
+} from '@/app/(routes)/product/[productId]/productDetails';
 import React from 'react';
 
 // interface for props
