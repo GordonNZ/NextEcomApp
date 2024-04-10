@@ -32,7 +32,7 @@ const Button = ({
       } ${small ? 'py-1 px-2 border-[1px]' : 'py-3 px-4 border-[2px]'}
       ${custom ? custom : ''}`}
     >
-      {icon && <IconType size={24} />}
+      {/* {icon && <IconType size={24} />} */}
       {label}
     </button>
   );

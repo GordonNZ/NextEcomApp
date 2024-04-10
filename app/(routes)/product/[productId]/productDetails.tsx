@@ -63,7 +63,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         (item) => item.id === product.id
       );
 
-      if (existingIndex > -1) {
+      if (existingIndex >= 0) {
         setIsProductInCart(true);
       }
     }
